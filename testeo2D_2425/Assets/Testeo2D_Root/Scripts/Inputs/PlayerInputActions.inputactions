@@ -1,36 +1,8 @@
 {
-    "name": "PlayerInputMap",
+    "name": "PlayerInputActions",
     "maps": [
         {
             "name": "Gameplay",
-            "id": "5b8def5e-9777-4039-8eb1-fb8411051953",
-            "actions": [
-                {
-                    "name": "New action",
-                    "type": "Button",
-                    "id": "d726d648-f01e-4732-b3ce-409c5584aea8",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "a5b223db-22b2-46f9-887c-aae18f0b577d",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "New action",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "UI",
             "id": "d6ff3de7-9efc-4e99-97a6-fa115c3422e0",
             "actions": [
                 {
@@ -204,6 +176,34 @@
                     "processors": "",
                     "groups": "BasicScheme",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "UI",
+            "id": "5b8def5e-9777-4039-8eb1-fb8411051953",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "d726d648-f01e-4732-b3ce-409c5584aea8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "a5b223db-22b2-46f9-887c-aae18f0b577d",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -1,19 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem; //Librería para que funcione el New Input System
 
 public class PlayerController2D : MonoBehaviour
 {
 
-    //Referencia a las antiguas inputs
-    float horInput;
-    float verInput;
-
-
+    
     //Referencias generales
     [SerializeField] Rigidbody2D playerRb; //Ref al rigidbody del player 
+    [SerializeField] PlayerInput playerInput; //Ref al gestor del input del jugador
 
     [Header("Movement Parameters")]
+
+    private Vector2 moveInput; //Almacén del input del player
     public float speed;
 
     [Header ("Jump Parameters")]
@@ -26,13 +26,13 @@ public class PlayerController2D : MonoBehaviour
     {
         //Autoreferenciarcomponentes: nombre de variable = GetComponent
         playerRb = GetComponent<Rigidbody2D>();
+        playerInput = GetComponent<PlayerInput>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        horInput = Input.GetAxis("Horizontal");
-        Jump();
+      
     }
 
     private void FixedUpdate()
@@ -41,15 +41,31 @@ public class PlayerController2D : MonoBehaviour
     }
     void Movement()
     {
-        playerRb.velocity = new Vector2(horInput * speed, playerRb.velocity.y);
+       playerRb.velocity = new Vector2(moveInput.x * speed, playerRb.velocity.y);
     }
 
-    void Jump()
+   
+
+    #region Input Events
+    //Para crea un evento:
+    //Se define PUBLIC sin tipo de dato (VOID) y con una referencia al input (Callback.Context)
+
+    public void HandleMove(InputAction.CallbackContext context)
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        moveInput = context.ReadValue<Vector2>();
+    }
+    public void HandleJump(InputAction.CallbackContext context)
+    {
+        if (context.started)
         {
             playerRb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
+
+        
     }
+
+    #endregion
+
+
 
 }
