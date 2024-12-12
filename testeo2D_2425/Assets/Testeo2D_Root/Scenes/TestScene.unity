@@ -8818,6 +8818,10 @@ PrefabInstance:
       propertyPath: jumpForce
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5000106566299502831, guid: 267990a1a63f9a54f92f794d83a073d9, type: 3}
+      propertyPath: isGrounded
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5891856384262634385, guid: 267990a1a63f9a54f92f794d83a073d9, type: 3}
       propertyPath: m_Constraints
       value: 4
